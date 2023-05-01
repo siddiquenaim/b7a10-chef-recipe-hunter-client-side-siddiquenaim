@@ -1,0 +1,6 @@
+.bg-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.84), rgba(0, 0, 0, 0.466)),
+    url("../../../images/banner.png");
+  height: 600px;
+  background-size: cover;
+}
