@@ -5,3 +5,15 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+.btn-custom {
+  background-color: #b68c5a;
+  color: white;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #301c04e4;
+  color: white;
+  border: none;
+}

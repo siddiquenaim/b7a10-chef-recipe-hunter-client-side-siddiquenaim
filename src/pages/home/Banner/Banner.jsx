@@ -4,17 +4,19 @@ import banner from "./../../../images/banner.png";
 
 const Banner = () => {
   return (
-    <div className="hero min-h-screen bg-banner">
-      <div className="hero-overlay bg-opacity-60"></div>
-      <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-          <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+    <div className="hero min-h-screen bg-banner mb-24">
+      <div className="hero-content lg:text-center text-neutral-content">
+        <div className="w-[90%] lg:w-[75%]">
+          <h1 className="mb-5 text-5xl font-bold mb-8">
+            Discover Turkish Cuisine
+          </h1>
+          <p className="mb-5 lg:w-[75%] lg:mx-auto">
+            Explore the rich flavors of Turkish cuisine with TasteTurkish. From
+            mouthwatering kebabs to delectable baklava, our recipes showcase the
+            diversity of this ancient culinary tradition. Join us on a
+            gastronomic adventure today!
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <button className="btn btn-custom">Khawa shuru koro</button>
         </div>
       </div>
     </div>

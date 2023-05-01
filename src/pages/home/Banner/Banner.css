@@ -1,6 +1,9 @@
 .bg-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.84), rgba(0, 0, 0, 0.466)),
+  background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.233)),
     url("../../../images/banner.png");
   height: 600px;
   background-size: cover;
+  color: white;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
 }

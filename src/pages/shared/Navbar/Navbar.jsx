@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div className="bg-[#F9F9FF]">
+    <div className="bg-[#F2F2F2]">
       <nav className="navbar flex flex-col lg:flex-row lg:w-[90%] mx-auto py-8">
         <div className="lg:navbar-start">
           <div className="dropdown mr-7">
@@ -33,7 +33,7 @@ const Navbar = () => {
                   to="/"
                   style={({ isActive }) => ({
                     color: isActive ? "#fff" : "#545e6f",
-                    background: isActive ? "#9674FF" : "#F9F9FF",
+                    background: isActive ? "#301c04e4" : "#F2F2F2",
                   })}
                 >
                   Home
@@ -44,7 +44,7 @@ const Navbar = () => {
                   to="/blog"
                   style={({ isActive }) => ({
                     color: isActive ? "#fff" : "#545e6f",
-                    background: isActive ? "#9674FF" : "#F9F9FF",
+                    background: isActive ? "#301c04e4" : "#F2F2F2",
                   })}
                 >
                   Blog
@@ -61,12 +61,12 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 description">
-            <li>
+            <li className="mr-3">
               <NavLink
                 to="/"
                 style={({ isActive }) => ({
                   color: isActive ? "#fff" : "#545e6f",
-                  background: isActive ? "#9674FF" : "#F9F9FF",
+                  background: isActive ? "#301c04e4" : "#F2F2F2",
                 })}
               >
                 Home
@@ -77,7 +77,7 @@ const Navbar = () => {
                 to="/blog"
                 style={({ isActive }) => ({
                   color: isActive ? "#fff" : "#545e6f",
-                  background: isActive ? "#9674FF" : "#F9F9FF",
+                  background: isActive ? "#301c04e4" : "#F2F2F2",
                 })}
               >
                 Blog
@@ -87,7 +87,7 @@ const Navbar = () => {
         </div>
         <div className="lg:navbar-end items-center mt-5 lg:mt-0">
           <NavLink to="/login">
-            <button className="btn normal-case">Login</button>
+            <button className="btn btn-custom normal-case">Login</button>
           </NavLink>
         </div>
       </nav>
