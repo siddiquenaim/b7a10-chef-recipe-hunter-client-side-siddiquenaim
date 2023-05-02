@@ -4,8 +4,8 @@ import "./RecipeCard.css";
 const RecipeCard = ({ recipe }) => {
   const { foodImage, recipeName, ingredients, cookingMethod, rating } = recipe;
   return (
-    <div className="card w-[95%] lg:mx-auto bg-base-100 shadow-xl border ">
-      <div className="card-body lg:w-[80%] lg:mx-auto mb-3">
+    <div className="card w-[95%] mx-auto bg-base-100 shadow-xl border ">
+      <div className="card-body mx-auto mb-3">
         <h2 className="card-title text-center mx-auto text-xl mb-3">
           {recipeName}
         </h2>
@@ -13,15 +13,12 @@ const RecipeCard = ({ recipe }) => {
           <p className="text-center mb-3">
             <span className="font-semibold">Rating:</span> {rating}
           </p>
-          <figure
-            className="mx-auto rounded-lg"
-            style={{ height: "auto", width: "300px" }}
-          >
+          <figure>
             <img
-              className="rounded-full"
-              style={{ height: "300px", width: "300" }}
+              className="rounded-3xl"
+              style={{ height: "365px", width: "365px" }}
               src={foodImage}
-              alt="Album"
+              alt="Chef Picture"
             />
           </figure>
           <div className="my-4">

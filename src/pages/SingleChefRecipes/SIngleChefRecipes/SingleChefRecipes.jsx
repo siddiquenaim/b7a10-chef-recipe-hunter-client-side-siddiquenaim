@@ -20,10 +20,13 @@ const SingleChefRecipes = () => {
         <ChefBanner key={chefInfo.chefId} chefInfo={chefInfo}></ChefBanner>
       </div>
 
-      <div className="w-[80%] lg:w-[90%] lg:mx-auto ml-3 grid lg:grid-cols-2 gap-10 pb-20 mt-10">
-        {recipes.map((recipe) => (
-          <RecipeCard key={recipe.recipeId} recipe={recipe}></RecipeCard>
-        ))}
+      <div>
+        <h2 className="mx-auto text-3xl font-semibold text-center">Recipes:</h2>
+        <div className="w-[90%] mx-auto lg:w-[90%] grid lg:grid-cols-2 gap-10 pb-20 mt-10">
+          {recipes.map((recipe) => (
+            <RecipeCard key={recipe.recipeId} recipe={recipe}></RecipeCard>
+          ))}
+        </div>
       </div>
     </div>
   );
