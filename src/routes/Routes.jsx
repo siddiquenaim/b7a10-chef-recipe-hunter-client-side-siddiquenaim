@@ -4,7 +4,7 @@ import Home from "../pages/home/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Blog from "../pages/Blog/Blog";
-import SingleChefRecipes from "../pages/SingleChefRecipes/SingleChefRecipes";
+import SingleChefRecipes from "../pages/SingleChefRecipes/SIngleChefRecipes/SingleChefRecipes";
 
 export const router = createBrowserRouter([
   {

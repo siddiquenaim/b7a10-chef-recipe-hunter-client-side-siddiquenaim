@@ -1,0 +1,20 @@
+.recipe-container {
+  position: relative;
+}
+
+.btn-favorite {
+  background-color: #b68c5a;
+  color: white;
+  border: none;
+  width: 100%;
+  border: 1px solid #95a0a7;
+  border-radius: 0px 0px 8px 8px;
+  position: absolute;
+  bottom: 0;
+}
+
+.btn-favorite:hover {
+  background-color: #301c04e4;
+  color: white;
+  border: none;
+}
