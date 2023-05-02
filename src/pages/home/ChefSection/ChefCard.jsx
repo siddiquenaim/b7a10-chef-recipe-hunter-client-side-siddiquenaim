@@ -1,7 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ChefCard = ({ chef }) => {
-  const { chefPic, chefName, yearsOfExperience, numRecipes, totalLikes } = chef;
+  const {
+    chefPic,
+    chefName,
+    yearsOfExperience,
+    numRecipes,
+    totalLikes,
+    chefId,
+  } = chef;
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl border">
       <figure>
@@ -24,7 +32,9 @@ const ChefCard = ({ chef }) => {
           Total likes: <span className="font-semibold">{totalLikes}</span>
         </p>
         <div className="card-actions justify-end">
-          <button className="btn btn-custom">View Recipes </button>
+          <Link to={`/recipes/${chefId}`}>
+            <button className="btn btn-custom">View Recipes</button>
+          </Link>
         </div>
       </div>
     </div>

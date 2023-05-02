@@ -60,10 +60,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <Link
-            to="/"
-            className="btn btn-ghost normal-case text-3xl font-extrabold logo"
-          >
+          <Link to="/" className="normal-case text-3xl font-extrabold logo">
             TasteTurkish
           </Link>
         </div>
@@ -102,7 +99,7 @@ const Navbar = () => {
             <div className="flex items-center justify-center gap-2">
               <div
                 className="w-10 tooltip tooltip-bottom"
-                data-tip={user.email}
+                data-tip={user.displayName}
               >
                 <img className="rounded-full" src={user?.photoURL} />
               </div>
