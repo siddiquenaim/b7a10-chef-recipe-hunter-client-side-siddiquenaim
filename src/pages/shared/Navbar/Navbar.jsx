@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div className="bg-[#F2F2F2]">
       <nav className="navbar flex flex-col lg:flex-row lg:w-[90%] mx-auto py-8">
-        <div className="lg:navbar-start">
+        <div className="lg:navbar-start bg-[#F2F2F2]">
           <div className="dropdown mr-7">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
               <svg

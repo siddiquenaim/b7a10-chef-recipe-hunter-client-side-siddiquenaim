@@ -3,7 +3,7 @@ import React from "react";
 const ChefCard = ({ chef }) => {
   const { chefPic, chefName, yearsOfExperience, numRecipes, totalLikes } = chef;
   return (
-    <div className="card card-side bg-base-100 shadow-xl border">
+    <div className="card lg:card-side bg-base-100 shadow-xl border">
       <figure>
         <img
           style={{ height: "365px", width: "365px" }}
