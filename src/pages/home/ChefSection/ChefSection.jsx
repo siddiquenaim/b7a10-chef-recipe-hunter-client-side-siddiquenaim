@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import ChefCard from "./ChefCard";
 
 const ChefSection = () => {
+  const [chefList, setChefList] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/chefs`)
+      .then((res) => res.json())
+      .then((data) => setChefList(data));
+  }, []);
   return (
-    <div>
-      <h2>This is chef section</h2>
+    <div className="lg:w-[90%] mx-auto grid lg:grid-cols-2 gap-5">
+      {chefList.map((chef) => (
+        <ChefCard key={chef.chefId} chef={chef}></ChefCard>
+      ))}
     </div>
   );
 };

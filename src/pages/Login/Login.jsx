@@ -45,12 +45,18 @@ const Login = () => {
           </form>
           <div className="flex justify-center items-center flex-col gap-2">
             <div>
-              <button className="btn btn-outline btn-primary normal-case">
+              <button
+                style={{ width: "240px" }}
+                className="btn btn-outline btn-primary normal-case "
+              >
                 Login with Google
               </button>
             </div>
             <div>
-              <button className="btn btn-outline normal-case">
+              <button
+                style={{ width: "240px" }}
+                className="btn btn-outline normal-case"
+              >
                 Login with GitHub
               </button>
             </div>
