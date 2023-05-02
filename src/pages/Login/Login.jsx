@@ -4,7 +4,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
-  const { logInUser } = useContext(AuthContext);
+  const { logInUser, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
 
   const handleLogin = (event) => {
@@ -19,6 +19,12 @@ const Login = () => {
         form.reset();
       })
       .catch((error) => setError(error.message));
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => console.log(result.user))
+      .catch((error) => console.log(error));
   };
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -65,7 +71,8 @@ const Login = () => {
             <div>
               <button
                 style={{ width: "240px" }}
-                className="btn btn-outline btn-primary normal-case "
+                className="btn btn-outline btn-primary normal-case"
+                onClick={handleGoogleSignIn}
               >
                 <FaGoogle /> <span className="ml-2">Login with Google</span>
               </button>
