@@ -10,7 +10,7 @@ const ChefSection = () => {
       .then((data) => setChefList(data));
   }, []);
   return (
-    <div className="w-[95%] lg:w-[90%] mx-auto grid lg:grid-cols-2 gap-5">
+    <div className="w-[95%] lg:w-[90%] mx-auto grid lg:grid-cols-2 gap-5 mb-10">
       {chefList.map((chef) => (
         <ChefCard key={chef.chefId} chef={chef}></ChefCard>
       ))}

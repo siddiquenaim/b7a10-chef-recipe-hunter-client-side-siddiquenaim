@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
+  const { logInUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    logInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        form.reset();
+      })
+      .catch((error) => setError(error.message));
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col ">
@@ -9,7 +27,7 @@ const Login = () => {
           <h1 className="text-5xl font-bold mb-5">Please Login!</h1>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form className="card-body">
+          <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -49,7 +67,7 @@ const Login = () => {
                 style={{ width: "240px" }}
                 className="btn btn-outline btn-primary normal-case "
               >
-                Login with Google
+                <FaGoogle /> <span className="ml-2">Login with Google</span>
               </button>
             </div>
             <div>
@@ -57,12 +75,15 @@ const Login = () => {
                 style={{ width: "240px" }}
                 className="btn btn-outline normal-case"
               >
-                Login with GitHub
+                <FaGithub /> <span className="ml-2">Login with GitHub</span>
               </button>
             </div>
           </div>
-          <div>
-            <p className="mt-4 mb-8 text-center">
+          <div className="mt-4 mb-8">
+            <p className="text-center text-red-600 w-[75%] mx-auto">
+              {error ? error : ""}
+            </p>
+            <p className=" text-center">
               New to this website?{" "}
               <Link to="/register" className="text-blue-600">
                 Register
