@@ -1,0 +1,9 @@
+.bg-review-banner {
+  background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.233)),
+    url("../../../images/rev-banner.png");
+  height: auto;
+  background-size: cover;
+  color: white;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+}

@@ -10,10 +10,13 @@ const ChefSection = () => {
       .then((data) => setChefList(data));
   }, []);
   return (
-    <div className="w-[95%] lg:w-[90%] mx-auto grid lg:grid-cols-2 gap-5 mb-10">
-      {chefList.map((chef) => (
-        <ChefCard key={chef.chefId} chef={chef}></ChefCard>
-      ))}
+    <div className="w-[95%] lg:w-[90%] mx-auto">
+      <h1 className="text-5xl font-bold text-center mb-10">Our Chefs</h1>
+      <div className="grid lg:grid-cols-2 gap-5 mb-10">
+        {chefList.map((chef) => (
+          <ChefCard key={chef.chefId} chef={chef}></ChefCard>
+        ))}
+      </div>
     </div>
   );
 };
