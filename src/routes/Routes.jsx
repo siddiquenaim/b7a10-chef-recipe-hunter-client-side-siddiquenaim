@@ -36,7 +36,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/recipes/${params.id}`);
+          return fetch(
+            `https://b7a10-chef-recipe-hunter-server-side-siddiquenaim-siddiquenaim.vercel.app/recipes/${params.id}`
+          );
         },
       },
     ],
