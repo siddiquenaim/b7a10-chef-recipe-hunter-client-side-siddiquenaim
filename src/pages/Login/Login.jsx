@@ -4,7 +4,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
-  const { logInUser, googleSignIn } = useContext(AuthContext);
+  const { logInUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -35,9 +35,20 @@ const Login = () => {
       })
       .catch((error) => setError(error.message));
   };
+
+  const handleGitHubSignIn = () => {
+    gitHubSignIn()
+      .then((result) => {
+        console.log(result.user);
+        setError("");
+        navigate(from);
+      })
+      .catch((error) => setError(error.message));
+  };
+
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col ">
+      <div className="hero-content flex-col">
         <div className="text-center ">
           <h1 className="text-5xl font-bold mb-5">Please Login!</h1>
           {location.state?.from?.pathname ? (
@@ -48,7 +59,7 @@ const Login = () => {
             ""
           )}
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card flex-shrink-0 w-full max-w-xs shadow-2xl bg-base-100 mx-auto">
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -97,6 +108,7 @@ const Login = () => {
               <button
                 style={{ width: "240px" }}
                 className="btn btn-outline normal-case"
+                onClick={handleGitHubSignIn}
               >
                 <FaGithub /> <span className="ml-2">Login with GitHub</span>
               </button>

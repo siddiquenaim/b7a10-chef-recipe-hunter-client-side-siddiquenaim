@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-[#F2F2F2]">
-      <nav className="navbar flex flex-col lg:flex-row lg:w-[90%] mx-auto py-8">
+      <nav className="navbar flex lg:flex-row lg:w-[90%] mx-auto py-8">
         <div className="lg:navbar-start bg-[#F2F2F2]">
           <div className="dropdown mr-7">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -58,8 +58,39 @@ const Navbar = () => {
                   Blog
                 </NavLink>
               </li>
+              <li>
+                {!user ? (
+                  <NavLink
+                    to="/login"
+                    style={({ isActive }) => ({
+                      color: isActive ? "#fff" : "#545e6f",
+                      background: isActive ? "#301c04e4" : "#F2F2F2",
+                    })}
+                  >
+                    Login
+                  </NavLink>
+                ) : (
+                  <NavLink
+                    onClick={handleLogOut}
+                    style={{
+                      color: "#545e6f",
+                      background: "#F2F2F2",
+                    }}
+                  >
+                    Logout
+                  </NavLink>
+                )}
+              </li>
             </ul>
           </div>
+          <Link
+            to="/"
+            className="normal-case text-3xl font-extrabold logo hidden lg:flex"
+          >
+            TasteTurkish
+          </Link>
+        </div>
+        <div className="navbar-center lg:hidden mx-auto">
           <Link to="/" className="normal-case text-3xl font-extrabold logo">
             TasteTurkish
           </Link>
@@ -90,7 +121,13 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="lg:navbar-end items-center mt-5 lg:mt-0">
+        <div
+          className="w-10 tooltip tooltip-left lg:hidden navbar-end"
+          data-tip={user?.displayName}
+        >
+          <img className="rounded-full" src={user?.photoURL} />
+        </div>
+        <div className="navbar-end items-center mt-5 lg:mt-0 hidden lg:flex">
           {!user ? (
             <NavLink to="/login">
               <button className="btn btn-custom normal-case">Login</button>

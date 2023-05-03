@@ -13,7 +13,7 @@ const Reviews = () => {
       .then((data) => setReviews(data));
   });
   return (
-    <div className="bg-review-banner my-20 p-20">
+    <div className="bg-review-banner my-20 p-5 lg:p-20">
       <h1 className="text-5xl font-bold text-center mb-10">
         What our clients say
       </h1>

@@ -14,7 +14,7 @@ const ChefCard = ({ chef }) => {
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl border">
       <figure>
-        <LazyLoad height={"365px"} width={"365px"} threshold={0.95}>
+        <LazyLoad threshold={0.95}>
           <img
             style={{ height: "365px", width: "365px" }}
             src={chefPic}
