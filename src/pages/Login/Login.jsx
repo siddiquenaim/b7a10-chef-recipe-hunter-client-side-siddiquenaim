@@ -1,11 +1,14 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
   const { logInUser, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -16,15 +19,21 @@ const Login = () => {
     logInUser(email, password)
       .then((result) => {
         console.log(result.user);
+        setError("");
         form.reset();
+        navigate(from);
       })
       .catch((error) => setError(error.message));
   };
 
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then((result) => console.log(result.user))
-      .catch((error) => console.log(error));
+      .then((result) => {
+        console.log(result.user);
+        setError("");
+        navigate(from);
+      })
+      .catch((error) => setError(error.message));
   };
   return (
     <div className="hero min-h-screen bg-base-200">
