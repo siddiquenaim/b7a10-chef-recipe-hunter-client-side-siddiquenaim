@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./RecipeCard.css";
+import toast, { Toaster } from "react-hot-toast";
 
 const RecipeCard = ({ recipe }) => {
   const { foodImage, recipeName, ingredients, cookingMethod, rating } = recipe;
+  const [favorite, setFavorite] = useState(false);
+  const notify = () => toast.success("Recipe Added to Your Favorites");
+
+  const handleFavorite = () => {
+    notify();
+    setFavorite(true);
+  };
   return (
     <div className="card w-[95%] mx-auto bg-base-100 shadow-xl border ">
       <div className="card-body mx-auto mb-3">
         <h2 className="card-title text-center mx-auto text-xl mb-3">
           {recipeName}
         </h2>
+        <Toaster></Toaster>
         <div>
           <p className="text-center mb-3">
             <span className="font-semibold">Rating:</span> {rating}
@@ -37,7 +46,13 @@ const RecipeCard = ({ recipe }) => {
           {cookingMethod}
         </div>
         <div className="card-actions justify-center mt-3">
-          <button className="btn btn-favorite ">Add to Favorites</button>
+          <button
+            onClick={handleFavorite}
+            className="btn btn-favorite"
+            disabled={favorite && true}
+          >
+            {favorite ? "Added to Favorites" : "Add to Favorites"}
+          </button>
         </div>
       </div>
     </div>

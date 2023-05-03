@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const ContactUs = () => {
+  const [sent, setSent] = useState(false);
+  const notify = () => toast.success("Thanks for your precious message!");
+
+  const handleDisable = () => {
+    notify();
+    setSent(true);
+  };
   return (
     <div className="hero min-h-screen bg-white">
       <div className="hero-content flex-col lg:flex-row w-[90%]">
@@ -24,12 +32,14 @@ const ContactUs = () => {
             to connecting with you. Happy cooking!
           </p>
         </div>
+
         <div className="mockup-phone">
           <div className="camera"></div>
           <div className="display">
             <div className="artboard artboard-demo phone-1">
-              <div className="card flex-shrink-0 w-full max-w-sm bg-base-100">
+              <form className="card flex-shrink-0 w-full max-w-sm bg-base-100">
                 <div className="card-body">
+                  <Toaster />
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text">Email</span>
@@ -38,6 +48,7 @@ const ContactUs = () => {
                       type="text"
                       placeholder="Email"
                       className="input input-bordered"
+                      required
                     />
                   </div>
                   <div className="form-control">
@@ -47,13 +58,20 @@ const ContactUs = () => {
                     <textarea
                       placeholder="Your Message"
                       className="textarea textarea-bordered textarea-lg w-full max-w-xs"
+                      required
                     ></textarea>
                   </div>
                   <div className="form-control mt-6">
-                    <button className="btn btn-custom">Send</button>
+                    <button
+                      onClick={handleDisable}
+                      className={`btn btn-custom`}
+                      disabled={sent && true}
+                    >
+                      {sent ? "Sent" : "Send"}
+                    </button>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
