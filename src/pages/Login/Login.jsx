@@ -40,6 +40,13 @@ const Login = () => {
       <div className="hero-content flex-col ">
         <div className="text-center ">
           <h1 className="text-5xl font-bold mb-5">Please Login!</h1>
+          {location.state?.from?.pathname ? (
+            <p className="text-yellow-800">
+              You must login first to see all the recipes
+            </p>
+          ) : (
+            ""
+          )}
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleLogin} className="card-body">

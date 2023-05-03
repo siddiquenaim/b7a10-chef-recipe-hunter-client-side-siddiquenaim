@@ -18,7 +18,7 @@ const RecipeCard = ({ recipe }) => {
               className="rounded-3xl"
               style={{ height: "365px", width: "365px" }}
               src={foodImage}
-              alt="Chef Picture"
+              alt={`${recipeName} Picture`}
             />
           </figure>
           <div className="my-4">
@@ -26,17 +26,15 @@ const RecipeCard = ({ recipe }) => {
               Ingredients:
             </h3>{" "}
             {ingredients.map((i) => (
-              <span>{i}, </span>
+              <span key={i}>{i}, </span>
             ))}
           </div>
         </div>
         <div>
-          <p>
-            <h3 className="text-center mx-auto font-bold text-lg underline mb-2">
-              Cooking Method:
-            </h3>
-            {cookingMethod}
-          </p>
+          <h3 className="text-center mx-auto font-bold text-lg underline mb-2">
+            Cooking Method:
+          </h3>
+          {cookingMethod}
         </div>
         <div className="card-actions justify-center mt-3">
           <button className="btn btn-favorite ">Add to Favorites</button>

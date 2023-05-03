@@ -14,11 +14,11 @@ const ChefCard = ({ chef }) => {
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl border">
       <figure>
-        <LazyLoad height={"100%"} width={"100%"} threshold={0.95}>
+        <LazyLoad height={"365px"} width={"365px"} threshold={0.95}>
           <img
             style={{ height: "365px", width: "365px" }}
             src={chefPic}
-            alt="Chef Picture"
+            alt={`${chefName} Picture`}
           />
         </LazyLoad>
       </figure>

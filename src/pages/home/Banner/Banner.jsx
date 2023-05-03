@@ -9,7 +9,7 @@ const Banner = () => {
           <h1 className="mb-5 text-5xl font-bold mb-8">
             Discover Turkish Cuisine
           </h1>
-          <p className="mb-5 lg:w-[75%] lg:mx-auto">
+          <p className="mb-5 lg:w-[75%] lg:mx-auto text-xl">
             Explore the rich flavors of Turkish cuisine with TasteTurkish. From
             mouthwatering kebabs to delectable baklava, our recipes showcase the
             diversity of this ancient culinary tradition. Join us on a

@@ -34,7 +34,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex="0"
-              className="dropdown-content menu p-2 shadow rounded-box w-52 border font-bold bg-white"
+              className="dropdown-content menu p-2 shadow rounded-box w-52 border font-bold bg-[#F2F2F2]"
             >
               <li>
                 <NavLink

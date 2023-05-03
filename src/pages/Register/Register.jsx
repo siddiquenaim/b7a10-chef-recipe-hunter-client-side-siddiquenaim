@@ -1,11 +1,18 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, logOut } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error.message));
+  };
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -17,12 +24,15 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
         setError("");
         form.reset();
         updateUserData(result.user, name, photo);
+        handleLogOut();
+        navigate("/login");
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   const updateUserData = (user, name, photo) => {
@@ -100,6 +110,7 @@ const Register = () => {
 
           <div className="mt-4 mb-8">
             <p className="text-center text-red-600">{error ? error : ""}</p>
+
             <p className=" text-center">
               Already have an account?{" "}
               <Link to="/login" className="text-blue-600">
