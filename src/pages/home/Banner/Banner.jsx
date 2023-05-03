@@ -6,7 +6,7 @@ const Banner = () => {
     <div className="hero min-h-screen bg-banner mb-24">
       <div className="hero-content lg:text-center text-neutral-content">
         <div className="w-[90%] lg:w-[75%]">
-          <h1 className="mb-5 text-5xl font-bold mb-8">
+          <h1 className="mb-5 text-5xl font-bold">
             Discover Turkish Cuisine
           </h1>
           <p className="mb-5 lg:w-[75%] lg:mx-auto text-xl">
