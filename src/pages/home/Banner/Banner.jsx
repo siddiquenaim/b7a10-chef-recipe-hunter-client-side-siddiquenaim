@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Banner.css";
+import { AuthContext } from "../../../provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div className="hero min-h-screen bg-banner mb-24">
       <div className="hero-content lg:text-center text-neutral-content">
@@ -13,9 +16,15 @@ const Banner = () => {
             diversity of this ancient culinary tradition. Join us on a
             gastronomic adventure today!
           </p>
-          <button className="btn btn-custom normal-case">
-            Start Food Journey
-          </button>
+          {!user ? (
+            <Link to="/login">
+              <button className="btn btn-custom normal-case">
+                Start Food Journey
+              </button>
+            </Link>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

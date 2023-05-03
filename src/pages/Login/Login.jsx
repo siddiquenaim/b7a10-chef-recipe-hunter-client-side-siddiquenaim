@@ -43,7 +43,9 @@ const Login = () => {
         setError("");
         navigate(from);
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (

@@ -6,11 +6,13 @@ import Register from "../pages/Register/Register";
 import Blog from "../pages/Blog/Blog";
 import SingleChefRecipes from "../pages/SingleChefRecipes/SIngleChefRecipes/SingleChefRecipes";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -27,6 +29,7 @@ export const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog></Blog>,
+        loader: () => fetch("http://localhost:5000/faq"),
       },
       {
         path: "recipes/:id",
