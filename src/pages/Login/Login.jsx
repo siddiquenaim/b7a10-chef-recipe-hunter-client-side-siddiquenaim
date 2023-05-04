@@ -18,7 +18,6 @@ const Login = () => {
 
     logInUser(email, password)
       .then((result) => {
-        console.log(result.user);
         setError("");
         form.reset();
         navigate(from, { replace: true });
@@ -29,7 +28,6 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
-        console.log(result.user);
         setError("");
         navigate(from, { replace: true });
       })
@@ -39,7 +37,6 @@ const Login = () => {
   const handleGitHubSignIn = () => {
     gitHubSignIn()
       .then((result) => {
-        console.log(result.user);
         setError("");
         navigate(from, { replace: true });
       })

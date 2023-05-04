@@ -11,7 +11,7 @@ const Register = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {})
-      .catch((error) => console.log(error.message));
+      .catch((error) => setError(error.message));
   };
 
   const handleRegister = (event) => {

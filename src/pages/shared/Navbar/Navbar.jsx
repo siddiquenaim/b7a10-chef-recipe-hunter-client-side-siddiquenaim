@@ -92,6 +92,21 @@ const Navbar = () => {
                   </NavLink>
                 )}
               </li>
+              <li>
+                {!user ? (
+                  <NavLink
+                    to="/register"
+                    style={({ isActive }) => ({
+                      color: isActive ? "#fff" : "#545e6f",
+                      background: isActive ? "#e74c3c" : "#F2F2F2",
+                    })}
+                  >
+                    Register
+                  </NavLink>
+                ) : (
+                  ""
+                )}
+              </li>
             </ul>
           </div>
           <Link
@@ -140,6 +155,21 @@ const Navbar = () => {
               >
                 About us
               </NavLink>
+            </li>
+            <li>
+              {!user ? (
+                <NavLink
+                  to="/register"
+                  style={({ isActive }) => ({
+                    color: isActive ? "#fff" : "#545e6f",
+                    background: isActive ? "#e74c3c" : "#F2F2F2",
+                  })}
+                >
+                  Register
+                </NavLink>
+              ) : (
+                ""
+              )}
             </li>
           </ul>
         </div>

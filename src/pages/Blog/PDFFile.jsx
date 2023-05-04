@@ -40,7 +40,7 @@ const PDFFile = () => {
         <Text style={styles.text}>
           Question-1: Tell us the differences between uncontrolled and
           controlled components.
-        </Text>{" "}
+        </Text>
         <Text style={styles.text}>
           Answer: In React, uncontrolled components are those where the form
           data is handled by the DOM itself. The component doesn't have direct
@@ -50,10 +50,10 @@ const PDFFile = () => {
           more control and flexibility, allowing for validation and custom
           logic, while uncontrolled components are simpler to implement but lack
           fine-grained control.
-        </Text>{" "}
+        </Text>
         <Text style={styles.text}>
-          Question-2: How to validate React props using PropTypes?{" "}
-        </Text>{" "}
+          Question-2: How to validate React props using PropTypes?
+        </Text>
         <Text style={styles.text}>
           Answer: PropTypes is a built-in library in React that helps to
           validate the props passed to a component. By defining the expected
@@ -61,11 +61,11 @@ const PDFFile = () => {
           a prop is required or optional. To validate props using PropTypes, you
           import the library, define the prop types for each prop in your
           component, and React will issue a warning in the console if the props
-          don't match the defined types or requirements.{" "}
-        </Text>{" "}
+          don't match the defined types or requirements.
+        </Text>
         <Text style={styles.text}>
-          Question-3: Tell us the difference between Node.js and Express.js.{" "}
-        </Text>{" "}
+          Question-3: Tell us the difference between Node.js and Express.js.
+        </Text>
         <Text style={styles.text}>
           Answer: Node.js is a runtime environment that allows you to execute
           JavaScript code on the server-side. It provides a platform for
@@ -75,11 +75,11 @@ const PDFFile = () => {
           of features and utilities, such as routing, middleware, and template
           engines. Express.js is designed to work seamlessly with Node.js and
           helps in creating robust and scalable web applications.
-        </Text>{" "}
+        </Text>
         <Text style={styles.text}>
           Question-4: What is a custom hook, and why will you create a custom
-          hook?{" "}
-        </Text>{" "}
+          hook?
+        </Text>
         <Text style={styles.text}>
           Answer: In React, a custom hook is a JavaScript function that starts
           with the 'use' prefix and allows you to reuse stateful logic across
