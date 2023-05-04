@@ -21,7 +21,7 @@ const Login = () => {
         console.log(result.user);
         setError("");
         form.reset();
-        navigate(from);
+        navigate(from, { replace: true });
       })
       .catch((error) => setError(error.message));
   };
@@ -31,7 +31,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         setError("");
-        navigate(from);
+        navigate(from, { replace: true });
       })
       .catch((error) => setError(error.message));
   };
@@ -41,7 +41,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         setError("");
-        navigate(from);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
