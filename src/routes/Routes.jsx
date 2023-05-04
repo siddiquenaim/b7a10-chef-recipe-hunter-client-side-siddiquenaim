@@ -29,7 +29,10 @@ export const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog></Blog>,
-        loader: () => fetch("http://localhost:5000/faq"),
+        loader: () =>
+          fetch(
+            "https://b7a10-chef-recipe-hunter-server-side-siddiquenaim-siddiquenaim.vercel.app/faq"
+          ),
       },
       {
         path: "recipes/:id",
