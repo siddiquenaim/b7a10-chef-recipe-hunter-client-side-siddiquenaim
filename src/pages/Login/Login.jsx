@@ -54,7 +54,7 @@ const Login = () => {
         <div className="text-center ">
           <h1 className="text-5xl font-bold mb-5">Please Login!</h1>
           {location.state?.from?.pathname ? (
-            <p className="text-yellow-800">
+            <p className="text-[#e74c3c]">
               You must login first to see all the recipes
             </p>
           ) : (

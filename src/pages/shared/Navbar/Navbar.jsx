@@ -41,7 +41,7 @@ const Navbar = () => {
                   to="/"
                   style={({ isActive }) => ({
                     color: isActive ? "#fff" : "#545e6f",
-                    background: isActive ? "#301c04e4" : "#F2F2F2",
+                    background: isActive ? "#e74c3c" : "#F2F2F2",
                   })}
                 >
                   Home
@@ -52,10 +52,21 @@ const Navbar = () => {
                   to="/blog"
                   style={({ isActive }) => ({
                     color: isActive ? "#fff" : "#545e6f",
-                    background: isActive ? "#301c04e4" : "#F2F2F2",
+                    background: isActive ? "#e74c3c" : "#F2F2F2",
                   })}
                 >
                   Blog
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/about"
+                  style={({ isActive }) => ({
+                    color: isActive ? "#fff" : "#545e6f",
+                    background: isActive ? "#e74c3c" : "#F2F2F2",
+                  })}
+                >
+                  About us
                 </NavLink>
               </li>
               <li>
@@ -64,7 +75,7 @@ const Navbar = () => {
                     to="/login"
                     style={({ isActive }) => ({
                       color: isActive ? "#fff" : "#545e6f",
-                      background: isActive ? "#301c04e4" : "#F2F2F2",
+                      background: isActive ? "#e74c3c" : "#F2F2F2",
                     })}
                   >
                     Login
@@ -102,21 +113,32 @@ const Navbar = () => {
                 to="/"
                 style={({ isActive }) => ({
                   color: isActive ? "#fff" : "#545e6f",
-                  background: isActive ? "#301c04e4" : "#F2F2F2",
+                  background: isActive ? "#e74c3c" : "#F2F2F2",
                 })}
               >
                 Home
               </NavLink>
             </li>
-            <li>
+            <li className="mr-3">
               <NavLink
                 to="/blog"
                 style={({ isActive }) => ({
                   color: isActive ? "#fff" : "#545e6f",
-                  background: isActive ? "#301c04e4" : "#F2F2F2",
+                  background: isActive ? "#e74c3c" : "#F2F2F2",
                 })}
               >
                 Blog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                style={({ isActive }) => ({
+                  color: isActive ? "#fff" : "#545e6f",
+                  background: isActive ? "#e74c3c" : "#F2F2F2",
+                })}
+              >
+                About us
               </NavLink>
             </li>
           </ul>

@@ -7,13 +7,15 @@
 }
 
 .btn-custom {
-  background-color: #b68c5a;
+  /* background-color: #b68c5a; */
+  background-color: #e74c3c;
   color: white;
   border: none;
 }
 
 .btn-custom:hover {
-  background-color: #301c04e4;
+  /* background-color: #301c04e4; */
+  background-color: #f39c12;
   color: white;
   border: none;
 }

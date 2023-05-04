@@ -10,7 +10,7 @@ const ContactUs = () => {
     setSent(true);
   };
   return (
-    <div className=" bg-white mb-20">
+    <div id="contact" className=" bg-white mb-20">
       <div className="mx-auto hero-content flex-col lg:flex-row w-[90%]">
         <div className="text-center lg:text-left lg:w-[50%]">
           <h1 className="text-5xl font-bold">Contact Us</h1>

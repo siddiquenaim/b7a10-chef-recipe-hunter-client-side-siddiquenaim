@@ -7,6 +7,7 @@ import Blog from "../pages/Blog/Blog";
 import SingleChefRecipes from "../pages/SingleChefRecipes/SIngleChefRecipes/SingleChefRecipes";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
             `https://b7a10-chef-recipe-hunter-server-side-siddiquenaim-siddiquenaim.vercel.app/recipes/${params.id}`
           );
         },
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>,
       },
     ],
   },
